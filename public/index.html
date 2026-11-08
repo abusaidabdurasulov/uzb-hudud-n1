@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hududlar reytingi — ovoz bering!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🏆 Hududlar reytingi</h1>
+  <p>O'zbekiston hududlari o'rtasida ovoz bering va o'z hududingizni 1-o'ringa chiqaring!</p>
+</header>
+<main>
+  <section id="authBox" class="card">
+    <h2>Tizimga kirish</h2>
+    <input id="username" placeholder="Login (lotin harflarida)" autocomplete="username">
+    <input id="password" type="password" placeholder="Parol (kamida 6 belgi)" autocomplete="current-password">
+    <div class="row">
+      <button id="btnLogin">Kirish</button>
+      <button id="btnRegister" class="alt">Ro'yxatdan o'tish</button>
+    </div>
+  </section>
+
+  <section id="userBox" class="card hidden">
+    <div class="row between">
+      <div>👤 <b id="uName"></b><br>Balans: <b id="uBalance">0</b> ta ovoz</div>
+      <button id="btnLogout" class="alt small">Chiqish</button>
+    </div>
+    <hr>
+    <h3>Ovoz sotib olish <span class="muted">(1 ovoz = <span id="priceTxt">5 000</span> so'm)</span></h3>
+    <div class="chips" id="chips">
+      <button data-n="1">1</button><button data-n="5">5</button>
+      <button data-n="10">10</button><button data-n="50">50</button>
+    </div>
+    <div class="row">
+      <input id="buyCount" type="number" min="1" max="1000" value="1">
+      <div class="total">Jami: <b id="buyTotal">5 000</b> so'm</div>
+    </div>
+    <button id="btnBuy" class="full">Telegram orqali to'lash</button>
+    <a id="payLink" class="full linkbtn hidden" target="_blank" rel="noopener">✈️ Telegram botni ochish va to'lash</a>
+    <p class="muted small">To'lovdan so'ng ovozlar balansingizga avtomatik qo'shiladi.</p>
+    <hr>
+    <h3>Ovoz berish</h3>
+    <label class="muted">Har bosishda nechta ovoz sarflansin: <input id="voteCount" type="number" min="1" value="1" class="mini"></label>
+  </section>
+
+  <section>
+    <h2>Joriy reyting</h2>
+    <div id="list" class="list"></div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
